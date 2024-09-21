@@ -2,7 +2,6 @@ import Header from "../componentes/Header"
 import ListaCards from "../componentes/ListaCards"
 import { useEffect, useState } from "react";
 import { getData } from "../servicios/fetch";
-
 const Inicio = ()=>{
     const [platillos,setPlatillos] = useState([])
     useEffect(()=>{

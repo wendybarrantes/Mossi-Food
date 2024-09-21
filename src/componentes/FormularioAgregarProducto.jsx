@@ -1,6 +1,6 @@
-import '../estilos/FormularioAgregarProducto.css'
 import { useState } from 'react'
 import { postData } from '../servicios/fetch'
+import "../estilos/FormularioAgregarProductos.css"
 const FormularioAgregarProducto = ()=>{
 
     const [img,setImg] = useState('')

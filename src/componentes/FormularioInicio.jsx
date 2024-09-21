@@ -52,12 +52,17 @@ const FormularioInicio = ()=>{
     
 
      const crearUsuario = async()=>{
+      if(nombreRegistro.trim() === '' || correoRegistro.trim() === '' || claveRegistro.trim() === ''){
+        alert('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
+        return
+    }else{
         const datosUsuario = {
             nombre:nombreRegistro,
             correo:correoRegistro,
             clave:claveRegistro
           }
           await postData(datosUsuario,"usuarios")
+      }
      } 
     return(
             <div className="container mt-5">

@@ -5,4 +5,4 @@ const Login_Registro = () => {
         <FormularioInicio/>
     )
 }
-export default Login_Registro;
+export default Login_Registro
