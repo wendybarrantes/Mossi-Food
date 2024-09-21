@@ -1,25 +1,27 @@
 /* eslint-disable react/prop-types */
-import { deleteData } from "../servicios/fetch"
-import CardPlatillo from "./CardPlatillo"
+import { deleteData } from "../servicios/fetch";
+import CardPlatillo from "./CardPlatillo";
 
-const ListaCards = ({platillos,mostrarEliminar})=>{
-    return(
+const ListaCards = ({ platillos, mostrar, editarPlatillo }) => {
+    return (
         <div className="d-flex">
-            {platillos.map(platillo=>{
-                return(
+            {platillos.map(platillo => {
+                return (
                     <CardPlatillo
-                    key={platillo.id}
-                    img={platillo.imagen}
-                    nombre={platillo.nombre}
-                    precio={platillo.precio}
-                    descripcion={platillo.descripcion}
-                    categoria={platillo.categoria}
-                    mostrarEliminar={mostrarEliminar}
-                    eliminarPlatillo={()=>{deleteData("productos",platillo.id)}}
+                        key={platillo.id}
+                        img={platillo.imagen}
+                        nombre={platillo.nombre}
+                        precio={platillo.precio}
+                        descripcion={platillo.descripcion}
+                        categoria={platillo.categoria}
+                        mostrar={mostrar}
+                        eliminarPlatillo={() => { deleteData("productos", platillo.id); }}
+                        editarPlatillo={() => { editarPlatillo(platillo); }} 
                     />
-                )
+                );
             })}
         </div>
-    )
-}
-export default ListaCards
+    );
+};
+
+export default ListaCards;

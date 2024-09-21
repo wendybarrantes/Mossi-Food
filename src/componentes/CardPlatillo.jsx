@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import '../estilos/CardPlatillo.css'
-const CardPlatillo = ({img,nombre,precio,descripcion,categoria,eliminarPlatillo,mostrarEliminar}) => {
+const CardPlatillo = ({img,nombre,precio,descripcion,categoria,eliminarPlatillo,editarPlatillo,mostrar}) => {
     return (
         <div className="product-card">
             <div className="product-image">
@@ -11,8 +11,11 @@ const CardPlatillo = ({img,nombre,precio,descripcion,categoria,eliminarPlatillo,
                 <p className="product-price">${precio}</p>
                 <p className="product-description">{descripcion}</p>
                 <span className="product-category">{categoria}</span>
-                {mostrarEliminar &&
-                <button className='btn btn-danger' onClick={eliminarPlatillo}>Eliminar</button>
+                {mostrar &&
+                <>
+                    <button className='btn btn-danger' onClick={eliminarPlatillo}>Eliminar</button>
+                    <button className='btn btn-warning' onClick={editarPlatillo}>Editar</button>
+                </>
                 }
                 </div>
         </div>

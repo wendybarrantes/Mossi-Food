@@ -3,7 +3,7 @@ const Header = ()=>{
     return(
         <>
             <header>
-               <p>holas</p>
+                <h1>Mossi Food</h1>
             </header>
         </>
     )

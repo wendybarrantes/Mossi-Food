@@ -26,8 +26,19 @@ const getData = async(endpoint)=>{
     console.error(error);
   }
 }
-
 export {getData}
+
+const getFilterData = async(endpoint,filtro,parametro)=>{
+    try {
+        const peticion = await fetch(`${API_URL}${endpoint}/?${filtro}=${parametro}`);
+        const datos = await peticion.json();
+        return datos;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+export {getFilterData}
+
 const deleteData = async(endpoint,id)=>{
     try {
         const peticion = await fetch(`${API_URL}${endpoint}/${id}`,{
@@ -43,3 +54,21 @@ const deleteData = async(endpoint,id)=>{
     }
 }
 export {deleteData}
+
+const putData = async(endpoint,obj,id)=>{
+    try {
+        const peticion = await fetch(`${API_URL}${endpoint}/${id}`,{
+            method:"PUT",
+            headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(obj)
+        })
+        const data = await peticion.json()
+        console.log(data);
+        
+    } catch (error) {
+        console.error(error);
+    }
+}
+export {putData}
