@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getData, putData } from "../servicios/fetch";
 import ListaCards from "../componentes/ListaCards";
 import { useNavigate } from "react-router-dom";
+import Header from "../componentes/Header";
 
 const Menu = () => {
     const navigate = useNavigate();
@@ -14,6 +15,7 @@ const Menu = () => {
         descripcion: '',
         categoria: '',
     });
+    
 
     useEffect(() => {
         const traerPlatillos = async () => {
@@ -49,6 +51,7 @@ const Menu = () => {
 
     return (
         <div>
+            <Header/>
             <h1>Menu</h1>
             <ListaCards 
                 platillos={platillos} 
