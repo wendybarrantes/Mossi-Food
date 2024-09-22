@@ -4,6 +4,8 @@ import ListaCards from "../componentes/ListaCards";
 import { useNavigate } from "react-router-dom";
 import Header from "../componentes/Header";
 
+
+//estados para 
 const Menu = () => {
     const navigate = useNavigate();
     const [platillos, setPlatillos] = useState([]);

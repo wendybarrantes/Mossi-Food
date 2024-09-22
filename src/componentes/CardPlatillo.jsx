@@ -1,4 +1,6 @@
-/* eslint-disable react/prop-types */
+/*creo el componente dandole las propiedades para que sea reutilizable.
+*/ 
+
 import '../estilos/CardPlatillo.css'
 const CardPlatillo = ({img,nombre,precio,descripcion,categoria,eliminarPlatillo,editarPlatillo,mostrar}) => {
     return (

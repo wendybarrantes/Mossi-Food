@@ -1,13 +1,18 @@
 import { useState } from 'react'
 import { postData } from '../servicios/fetch'
 import "../estilos/FormularioAgregarProductos.css"
-const FormularioAgregarProducto = ()=>{
 
+/*creo un estado que hace referencia a cada uno de los inputs y estos se actualizan con el evento de 
+los inputs.
+Luego estos datos se mandan a la api.
+*/ 
+const FormularioAgregarProducto = ()=>{
     const [img,setImg] = useState('')
     const [nombrePlato,setNombrePlato] = useState('')
     const [precio,setPrecio]= useState('')
     const [descripcion,setDescripcion]=useState('')
     const [categoria,setCategoria] = useState('')
+
 
     const agregarPlatillo = async()=>{
         if(img.trim() === '' || nombrePlato.trim() === '' || precio.trim() === '' || descripcion.trim() === '' || categoria.trim() === ''){
@@ -25,9 +30,7 @@ const FormularioAgregarProducto = ()=>{
         }
     }
 
-
-
-      // Maneja la carga y vista previa de la imagen seleccionada.
+// funcion para subir imagen en base64.
   const subirImg = () => {
     const file = document.getElementById("upload-file").files[0];
     const reader = new FileReader();
@@ -38,8 +41,6 @@ const FormularioAgregarProducto = ()=>{
         reader.readAsDataURL(file);
     }
 };
-
-
     return (
         <div className="form-container">
           <h2>Agregar Nuevo Plato</h2>

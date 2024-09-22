@@ -1,10 +1,11 @@
-
 import { useState } from 'react';
 import '../estilos/FormularioInicio.css';
 import { getData, postData } from '../servicios/fetch';
 import { useNavigate } from 'react-router-dom';
 
-
+/*formulario de registro e inicio de sesion que toman los estados para validar inicio de sesion
+o para registrar un usuario nuevo
+*/
 const FormularioInicio = ()=>{
     const navigate = useNavigate()
     const [activeTab, setActiveTab] = useState("login");
@@ -29,8 +30,8 @@ const FormularioInicio = ()=>{
       
       const validarUsuario = async()=>{
         const credencialesUsuario = {
-            correo:correoInicio,
-            clave:claveInicio
+              correo:correoInicio,
+              clave:claveInicio
         }
         const data = await getData("usuarios")
 
@@ -57,9 +58,9 @@ const FormularioInicio = ()=>{
         return
     }else{
         const datosUsuario = {
-            nombre:nombreRegistro,
-            correo:correoRegistro,
-            clave:claveRegistro
+              nombre:nombreRegistro,
+              correo:correoRegistro,
+              clave:claveRegistro
           }
           await postData(datosUsuario,"usuarios")
       }

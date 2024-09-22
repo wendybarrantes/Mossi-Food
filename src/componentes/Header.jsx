@@ -1,6 +1,8 @@
 import '../estilos/Header.css'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
+
+
 const Header = ()=>{
     const navigate = useNavigate()
     return(
