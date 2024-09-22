@@ -16,7 +16,7 @@ const Inicio = ()=>{
         traerPlatillos()
     },[])
     return(
-        <>
+    <>
         <Header/>
             <h1>Destacados</h1>
             <ListaCards platillos={platillosDestacados}/> 
