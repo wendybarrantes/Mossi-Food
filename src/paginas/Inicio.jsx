@@ -17,6 +17,10 @@ const Inicio = ()=>{
     },[])
     return(
     <>
+        <footer/>
+
+
+
         <Header/>
             <h1>Destacados</h1>
             <ListaCards platillos={platillosDestacados}/> 

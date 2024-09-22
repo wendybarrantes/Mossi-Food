@@ -4,7 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
+  const [cantCarrito, setCantCarrito] = useState(localStorage.getItem("platillos") ? JSON.parse(localStorage.getItem("platillos")).length : 0);
   
+  useEffect(() => {
+    setCantCarrito(localStorage.getItem("platillos") ? JSON.parse(localStorage.getItem("platillos")).length : 0);
+  }, [cantCarrito]);
   return (
     <Navbar bg="light" expand="lg" className="mb-4">
       <Container>
@@ -28,6 +32,10 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <Link to="/carrito" className="carrito">
+        <i className="fa-solid fa-cart-shopping"></i>
+      </Link>
+      <p>{cantCarrito}</p>
     </Navbar>
   );
 }

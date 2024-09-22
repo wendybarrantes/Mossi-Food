@@ -1,8 +1,7 @@
 /*creo el componente dandole las propiedades para que sea reutilizable.
 */ 
-
 import '../estilos/CardPlatillo.css'
-const CardPlatillo = ({img,nombre,precio,descripcion,categoria,eliminarPlatillo,editarPlatillo,mostrar}) => {
+const CardPlatillo = ({img,nombre,precio,descripcion,categoria,eliminarPlatillo,editarPlatillo,agregarCarrito,mostrar,mostrarCarrito}) => {
     return (
         <div className="product-card">
             <div className="product-image">
@@ -13,7 +12,12 @@ const CardPlatillo = ({img,nombre,precio,descripcion,categoria,eliminarPlatillo,
                 <p className="product-price">${precio}</p>
                 <p className="product-description">{descripcion}</p>
                 <span className="product-category">{categoria}</span>
-                {mostrar &&
+                
+                { mostrarCarrito &&
+                    <button className='btn btn-success' onClick={agregarCarrito}>Agregar al carrito</button>
+                }
+                
+                { mostrar &&
                 <>
                     <button className='btn btn-danger' onClick={eliminarPlatillo}>Eliminar</button>
                     <button className='btn btn-warning' onClick={editarPlatillo}>Editar</button>

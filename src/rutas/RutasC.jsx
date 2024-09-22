@@ -24,6 +24,9 @@ const RutasC  = ()=>{
                 <Route path="/contacto" element={<Contacto/>}/>
 
                 <Route path="/menu" element={<MenuPrivado> <Menu/>  </MenuPrivado>}/>
+
+                <Route path="/carrito" element={<Carrito/>}/>
+
             </Routes>
         </Router>
     )
