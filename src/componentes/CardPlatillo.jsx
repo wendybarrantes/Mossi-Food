@@ -13,10 +13,11 @@ const CardPlatillo = ({img,nombre,precio,descripcion,categoria,eliminarPlatillo,
                 <p className="product-description">{descripcion}</p>
                 <span className="product-category">{categoria}</span>
                 
+
+                {/*condicionales en las cards para que se muestren solamente al administrador o al usuario*/}
                 { mostrarCarrito &&
                     <button className='btn btn-success' onClick={agregarCarrito}>Agregar al carrito</button>
                 }
-                
                 { mostrar &&
                 <>
                     <button className='btn btn-danger' onClick={eliminarPlatillo}>Eliminar</button>

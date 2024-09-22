@@ -66,6 +66,16 @@ const getFilterData = async(endpoint,filtro,parametro)=>{
   }
 export {getFilterData}
 
+const getCartData = async(endpoint,id)=>{
+    try {
+        const peticion = await fetch(API_URL + endpoint+"/"+id);
+        const datos = await peticion.json();
+        return datos;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  export {getCartData}
 
 /* creacion de la funcion para eliminar los datos, le doy un id para que solamente se elimine el dato 
 seleccionado*/ 

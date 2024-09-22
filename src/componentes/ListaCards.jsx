@@ -1,15 +1,16 @@
 import { deleteData } from "../servicios/fetch";
 import CardPlatillo from "./CardPlatillo";
 
-/*estrucura de la lista de cards, en la que se arma cada card y se le pasan los datos que estan la api
+/*estrucura de la lista de cards, en la que se arma cada card y se le pasan los datos que estan en la api
 segun el iterador.
 */ 
-
 const ListaCards = ({ platillos, mostrar, editarPlatillo,mostrarCarrito }) => {
 
-    const moverCarrito=(platillo)=>{
+
+    /* funcion para guardar los ids de los platillos en el localStorage */ 
+    const moverCarrito=(compra)=>{
         let idPlatillos = JSON.parse(localStorage.getItem("platillos")) || [];
-        idPlatillos.push(platillo.id);
+        idPlatillos.push(compra.id);
         localStorage.setItem("platillos",JSON.stringify(idPlatillos));
     }
     return (
@@ -27,7 +28,7 @@ const ListaCards = ({ platillos, mostrar, editarPlatillo,mostrarCarrito }) => {
                         mostrarCarrito={mostrarCarrito}
                         eliminarPlatillo={() => {deleteData("productos", platillo.id); }}
                         editarPlatillo={() => {editarPlatillo(platillo) }} 
-                        agregarCarrito={()=>moverCarrito(platillo)}
+                        agregarCarrito={()=>moverCarrito(platillo)} // Se ejecuta la función para guardar el id de cada platillo
                     />
                 );
             })}

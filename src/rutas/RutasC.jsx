@@ -7,6 +7,8 @@ import AgregarProducto from "../paginas/AgregarProducto"
 import Menu from "../paginas/Menu"
 import MenuPrivado from "../componentes/MenuPrivado"
 import Contacto from "../paginas/Contacto"
+import Carrito from "../paginas/Carrito"
+
 const RutasC  = ()=>{
     return(
         <Router>

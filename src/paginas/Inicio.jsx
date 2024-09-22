@@ -23,7 +23,7 @@ const Inicio = ()=>{
 
         <Header/>
             <h1>Destacados</h1>
-            <ListaCards platillos={platillosDestacados}/> 
+            <ListaCards platillos={platillosDestacados} mostrarCarrito={true}/> 
             {/* Se muestran en la página todos los datos que venían del estado */}
         </>
     )

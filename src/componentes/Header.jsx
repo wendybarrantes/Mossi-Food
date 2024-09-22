@@ -1,7 +1,7 @@
 import '../estilos/Header.css';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { useState,useEffect } from 'react';
 const Header = () => {
   const navigate = useNavigate();
   const [cantCarrito, setCantCarrito] = useState(localStorage.getItem("platillos") ? JSON.parse(localStorage.getItem("platillos")).length : 0);
