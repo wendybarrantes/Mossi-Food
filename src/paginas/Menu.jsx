@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../componentes/Header";
 
 
-//estados para 
+//estados para la creacion del menu del administrador.
 const Menu = () => {
     const navigate = useNavigate();
     const [platillos, setPlatillos] = useState([]);
@@ -18,16 +18,18 @@ const Menu = () => {
         categoria: '',
     });
     
-
+//las dependencias cambian el useEffect se vuelve a ejecutar.
     useEffect(() => {
         const traerPlatillos = async () => {
             const datos = await getData("productos");
             setPlatillos(datos);
         };
         traerPlatillos();
-    }, []);
+    }, [platillos]);
 
-    const handleEditClick = (platillo) => {
+
+//funcion que muestra el formulario y rellena los campos con la informacion previa a la edicion.
+    const mostrarFomulario = (platillo) => {
         setPlatilloEdit(platillo);
         setFormData({
             imagen: platillo.imagen,
@@ -37,19 +39,18 @@ const Menu = () => {
             categoria: platillo.categoria,
         });
     };
-
-    const handleChange = (e) => {
+//confirma la edicion, obtengo la informacion previa y los actulizo por medio de la llave valor.
+    const confirmarEdit = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        await putData("productos", formData,platilloEdit.id);
-        setPlatilloEdit(null); 
-        const datosActualizados = await getData("productos"); 
-        setPlatillos(datosActualizados);
+// Enviar los cambios a la api
+    const subirCambio = async (e) => {
+        e.preventDefault(); // evita la carga del formulario y que los datos se envien vacios
+        await putData("productos", formData,platilloEdit.id); // se ejecuta el put data, con el endpoint, el objeto y el del platillo
+        setPlatilloEdit(null); // se oculta el formulario 
     };
+
 
     return (
         <div>
@@ -58,22 +59,23 @@ const Menu = () => {
             <ListaCards 
                 platillos={platillos} 
                 mostrar={true} 
-                editarPlatillo={handleEditClick} 
+                editarPlatillo={mostrarFomulario} 
             />
+
 
             <button className="btn btn-primary" onClick={() => { navigate("/agregar") }}>
                 Agregar un nuevo producto
             </button>
 
             {platilloEdit && (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={subirCambio}>
                     <h2>Editar Platillo</h2>
                     <div>
                         <label>Imagen:</label>
                         <input
                             type="file"
                             name="imagen"
-                            onChange={handleChange}
+                            onChange={confirmarEdit}
                         />
                     </div>
                     <div>
@@ -82,7 +84,7 @@ const Menu = () => {
                             type="text"
                             name="nombre"
                             value={formData.nombre}
-                            onChange={handleChange}
+                            onChange={confirmarEdit}
                         />
                     </div>
                     <div>
@@ -91,7 +93,7 @@ const Menu = () => {
                             type="number"
                             name="precio"
                             value={formData.precio}
-                            onChange={handleChange}
+                            onChange={confirmarEdit}
                         />
                     </div>
                     <div>
@@ -99,7 +101,7 @@ const Menu = () => {
                         <textarea
                             name="descripcion"
                             value={formData.descripcion}
-                            onChange={handleChange}
+                            onChange={confirmarEdit}
                         />
                     </div>
                     <div>
@@ -108,7 +110,7 @@ const Menu = () => {
                             type="text"
                             name="categoria"
                             value={formData.categoria}
-                            onChange={handleChange}
+                            onChange={confirmarEdit}
                         />
                     </div>
                     <button type="submit" className="btn btn-success">Confirmar</button>
