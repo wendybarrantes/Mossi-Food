@@ -14,7 +14,9 @@ const ListaCards = ({ platillos, mostrar, editarPlatillo,mostrarCarrito }) => {
         localStorage.setItem("platillos",JSON.stringify(idPlatillos));
     }
     return (
-        <div className="d-flex">
+        <div className="d-flex flex-wrap justify-content-center align-items-center" style={{minHeight:
+            '100vh',gap:'20px'
+        }}>
             {platillos.map(platillo => {
                 return (
                     <CardPlatillo
