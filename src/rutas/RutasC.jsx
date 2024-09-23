@@ -1,4 +1,4 @@
-import {Route, BrowserRouter as  Router, Routes } from "react-router-dom"
+import { BrowserRouter as  Router, Routes, Route } from "react-router-dom"
 import Inicio from "../paginas/Inicio"
 import MenuUsuario from "../paginas/MenuUsuario"
 import AgregarProducto from "../paginas/AgregarProducto"
@@ -29,8 +29,7 @@ const RutasC  = ()=>{
 
                 <Route path="/carrito" element={<Carrito/>}/>
 
-                <Router path="/sobreNosotros" element={<SobreNosotros/>}/>
-
+                <Route path="/sobreNosotros" element={<SobreNosotros/>}/>
             </Routes>
         </Router>
     )
