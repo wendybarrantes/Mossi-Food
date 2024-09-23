@@ -3,6 +3,7 @@
   --text-color: #6f4c3e; /* Café */
   --hover-color: #6fa3d5; /* Celeste */
   --cart-color: #6fa3d5; /* Color del carrito */
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .header {
@@ -39,7 +40,7 @@
 /* Responsividad */
 @media (max-width: 768px) {
   .nav-links {
-      flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-      align-items: center; /* Centra los enlaces */
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: center; /* Centra los enlaces */
   }
 }

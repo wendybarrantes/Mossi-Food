@@ -3,6 +3,7 @@ import { getDestacadosData } from "../servicios/fetch"
 import { useState,useEffect } from "react"
 import ListaCards from "../componentes/ListaCards"
 import Hero from "../componentes/Hero"
+import TextoDestacado from "../componentes/TextoDestacado"
 
 
 
@@ -20,15 +21,16 @@ const Inicio = ()=>{
     },[])
     return(
     <>
-        <footer/>
 
         <Header/>
         <Hero/>
-
-
-            <h1>Destacados</h1>
+            <TextoDestacado/> 
+        
+      
             <ListaCards platillos={platillosDestacados} mostrarCarrito={true}/> 
             {/* Se muestran en la página todos los datos que venían del estado */}
+
+            <footer/>
         </>
     )
 }

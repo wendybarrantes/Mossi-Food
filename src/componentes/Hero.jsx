@@ -1,7 +1,6 @@
-// Hero.jsx
 import React from 'react';
 import '../estilos/Hero.css'
-import heroImage from '../assets/imgs/hero.2.jpg'; // Asegúrate de que la ruta sea correcta
+import heroImage from '../assets/imgs/hero.2.jpg'; 
 
 const Hero = () => {
   return (
