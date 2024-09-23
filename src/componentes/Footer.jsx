@@ -1,41 +1,48 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importar el componente Link para navegación interna
-import './Footer.css';
-import mossiLogo from './path/to/your/mossiLogo.png'; // Cambia la ruta a donde tengas tu logo
+import "../estilos/Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faFacebook, faWhatsapp, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
-  return (
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="logo-container">
-          <img src= "src\assets\imgs\mossi_food_logo.jpg" alt="Mossi Food Service" className="footer-logo" />
-        </div>
-
-        {/ Enlaces de navegación /}
-        <nav className="footer-nav">
-          <ul>
-            <li><Link to="/MenuUsuario">Menu</Link></li>
-            <li><Link to="/Contacto">Contacts</Link></li>
-            <li><Link to="/SobreNosotros">About</Link></li>
-          </ul>
-        </nav>
-
-        {/ Íconos de redes sociales /}
-        <div className="social-icons">
-          <a href="#"><i className="fab fa-facebook-f"></i></a>
-          <a href="#"><i className="fab fa-instagram"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
-          <a href="#"><i className="fab fa-youtube"></i></a>
-          <a href="#"><i className="fab fa-pinterest"></i></a>
-        </div>
-
-        {/ Copyright */}
-        <div className="footer-bottom">
-          <p>&copy; 2024 Mossi Food Service. All Rights Reserved. Privacy Policy.</p>
-        </div>
-      </div>
-    </footer>
-  );
+    return (
+        <footer className="footer">
+            <div className="footer-container">
+                <div className="footer-section about">
+                    <h2>Sobre Nosotros</h2>
+                    <p>En Mossi Food Service, ofrecemos una experiencia culinaria única con platos elaborados con ingredientes frescos y de alta calidad. Ven y descubre tu nuevo lugar favorito.</p>
+                </div>
+                <div className="footer-section social">
+                    <h2>Síguenos</h2>
+                    <div className="social-icons">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faInstagram} />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faFacebook} />
+                        </a>
+                        <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faWhatsapp} />
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faTwitter} />
+                        </a>
+                    </div>
+                </div>
+                <div className="footer-section newsletter">
+                    <h2>Suscríbete a Nuestro Boletín</h2>
+                    <p>Recibe las últimas noticias y ofertas especiales directamente en tu bandeja de entrada.</p>
+                    <form>
+                        <input type="email" placeholder="Ingresa tu correo" required />
+                        <button type="submit">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div className="footer-bottom">
+                <p>© 2024 Mossi Food Service. Todos los derechos reservados. | <a href="#privacy">Política de Privacidad</a></p>
+                <p>Diseñado por Templatemonster</p>
+            </div>
+        </footer>
+    );
 };
 
 export default Footer;

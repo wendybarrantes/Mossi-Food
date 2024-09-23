@@ -1,18 +1,17 @@
 :root {
-  --header-bg: #ffffff; /* Fondo blanco para el header */
-  --text-color: #6f4c3e; /* Café */
+  --text-color: #343a40; /* Café */
   --hover-color: #6fa3d5; /* Celeste */
   --cart-color: #6fa3d5; /* Color del carrito */
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace; /* Asegúrate de incluir la fuente */
 }
 
-.header {
-  background-color: var(--header-bg);
+.Header {
+  background-color: #343a40; /* Utiliza el nuevo gris oscuro */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .nav-links .nav-item {
-  color: var(--text-color);
+  color: #343a40;
   font-weight: 500;
   font-size: 18px;
   transition: color 0.3s; /* Transición suave para hover */

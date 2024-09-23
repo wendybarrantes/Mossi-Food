@@ -1,4 +1,4 @@
-import '../estilos/Header.css';
+import "../estilos/Header.css";
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';

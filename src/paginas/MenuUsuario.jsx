@@ -2,6 +2,7 @@ import Header from "../componentes/Header"
 import ListaCards from "../componentes/ListaCards"
 import { useEffect, useState } from "react";
 import { getData, getFilterData } from "../servicios/fetch";
+import Footer from "../componentes/Footer";
 
 const MenuUsuario = ()=>{
     const [platillos,setPlatillos] = useState([])
@@ -35,7 +36,7 @@ const MenuUsuario = ()=>{
         <h2>Destacados</h2>
         {categoria == "" ? <ListaCards platillos={platillos}/> : <ListaCards platillos={platillosFiltrados}/>}
 
-
+        <Footer/>
 
         </>
     )
