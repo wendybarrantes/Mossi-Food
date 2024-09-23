@@ -4,7 +4,6 @@ import ListaCards from "../componentes/ListaCards";
 import { useNavigate } from "react-router-dom";
 import Header from "../componentes/Header";
 
-
 //estados para la creacion del menu del administrador.
 const Menu = () => {
     const navigate = useNavigate();
@@ -54,6 +53,7 @@ const Menu = () => {
 
     return (
         <div>
+
             <Header/>
             <h1>Menu</h1>
             <ListaCards 
