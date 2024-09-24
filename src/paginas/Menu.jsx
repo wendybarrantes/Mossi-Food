@@ -50,7 +50,6 @@ const Menu = () => {
         setPlatilloEdit(null); // se oculta el formulario 
     };
 
-
     return (
         <div>
 

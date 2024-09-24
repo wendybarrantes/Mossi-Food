@@ -7,6 +7,7 @@ import TextoDestacado from "../componentes/TextoDestacado"
 import Footer from "../componentes/Footer"
 
 
+
 const Inicio = ()=>{
     // Llamamos al estado y lo inicializamos como un arreglo vacío (para después asignarle los datos)
     const [platillosDestacados,setPlatillosDestacados] = useState([])

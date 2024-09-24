@@ -53,7 +53,7 @@ const ContactForm = () => {
         onChange={handleChange}
         required
       />
-      <button type="submit">Send</button>
+      <button type="submit" style={{ marginBottom: '30px' }}>Send</button>
     </form>
   );
 };

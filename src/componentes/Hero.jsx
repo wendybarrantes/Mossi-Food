@@ -1,14 +1,14 @@
 import React from 'react';
 import '../estilos/Hero.css'
-import heroImage from '../assets/imgs/hero1.jpg'; 
+import heroImage from '../assets/imgs/OIP.jpg'; 
 
 const Hero = () => {
   return (
     <div className="hero">
       <img src={heroImage} alt="Mossi Food" className="hero-image" />
       <div className="hero-content">
-        <h1>Welcome to Mossi Food Service</h1>
-        <p>Delicious food delivered to your door!</p>
+        <h1>Bienvenido Mossi Food Service</h1>
+        <p>Deliciosa Comida a su alcance!</p>
 
       </div>
     </div>

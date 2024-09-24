@@ -1,0 +1,15 @@
+.titulo{
+    text-align: center;
+    color:#4E342E;
+    font-family: "poppins,sans-serif";
+}
+.descripcion{
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: "poppins,sans-serif";
+}
+.descripcion p {
+    margin-bottom: 20px; /* Espacio entre párrafos */
+}
