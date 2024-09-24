@@ -1,8 +1,8 @@
-/*creacion de la funcion ruta privada, me comunico con el localStorage
+/*creacion de la funcion ruta privada, me comunico con el sessionStorage
 para conocer el valor de admin.
 */
 const esAdmin=()=>{
-    const localAdmin = localStorage.getItem('admin');
+    const localAdmin = sessionStorage.getItem('admin');
     return localAdmin
 }
 /*

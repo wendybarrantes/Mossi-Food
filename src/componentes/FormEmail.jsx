@@ -24,7 +24,7 @@ const ContactForm = () => {
         console.error('Failed to send email:', err);
       });
 
-    // Reset form after sending
+   
     setFormData({ name: '', email: '', message: '' });
   };
 

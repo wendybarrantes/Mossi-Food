@@ -5,6 +5,18 @@
       "nombre": "Julieta Venegas",
       "correo": "lajuli@gmail.com",
       "clave": "1234"
+    },
+    {
+      "id": "34d3",
+      "nombre": "wendy",
+      "correo": "barrantes@",
+      "clave": "123"
+    },
+    {
+      "id": "2ee3",
+      "nombre": "wendy",
+      "correo": "barrantes03@gmail.com",
+      "clave": "123"
     }
   ],
   "productos": [

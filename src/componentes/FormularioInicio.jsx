@@ -40,7 +40,7 @@ const FormularioInicio = ()=>{
 
         if(credencialesUsuario.correo === "admin@gmail.com" && credencialesUsuario.clave === "admin"){
           navigate("/menu")
-          localStorage.setItem("admin",true)
+          sessionStorage.setItem("admin",true)
         }
 
         if(usuarioValido){

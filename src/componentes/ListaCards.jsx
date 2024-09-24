@@ -7,21 +7,22 @@ segun el iterador.
 const ListaCards = ({ platillos, mostrar, editarPlatillo,mostrarCarrito }) => {
 
 
-    /* funcion para guardar los ids de los platillos en el localStorage */ 
+    /* funcion para guardar los ids de los platillos en el sessionStorage */ 
     const moverCarrito=(compra)=>{
-        let idPlatillos = JSON.parse(localStorage.getItem("platillos")) || [];
+        let idPlatillos = JSON.parse(sessionStorage.getItem("platillos")) || [];
         idPlatillos.push(compra.id);
-        localStorage.setItem("platillos",JSON.stringify(idPlatillos));
+        sessionStorage.setItem("platillos",JSON.stringify(idPlatillos));
     }
     return (
-        <div className="d-flex flex-wrap justify-content-center align-items-center" style={{minHeight:
-            '100vh',gap:'20px'
-        }}>
+        <div className="d-flex flex-wrap justify-content-center align-items-center" 
+        style={{minHeight:'100vh',gap:'20px'}}>
+       
+
             {platillos.map(platillo => {
                 return (
                     <CardPlatillo
                         key={platillo.id}
-                        img={platillo.imagen}
+                        img={platillo.imagen    }
                         nombre={platillo.nombre}
                         precio={platillo.precio}
                         descripcion={platillo.descripcion}

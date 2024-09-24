@@ -6,12 +6,12 @@ import { useState, useEffect } from 'react';
 const Header = () => {
   const navigate = useNavigate();
   const [cantCarrito, setCantCarrito] = useState(
-    localStorage.getItem("platillos") ? JSON.parse(localStorage.getItem("platillos")).length : 0
+    sessionStorage.getItem("platillos") ? JSON.parse(sessionStorage.getItem("platillos")).length : 0
   );
 
   useEffect(() => {
     const updateCarrito = () => {
-      setCantCarrito(localStorage.getItem("platillos") ? JSON.parse(localStorage.getItem("platillos")).length : 0);
+      setCantCarrito(sessionStorage.getItem("platillos") ? JSON.parse(sessionStorage.getItem("platillos")).length : 0);
     };
     updateCarrito();
   }, []);
