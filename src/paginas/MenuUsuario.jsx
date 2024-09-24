@@ -40,11 +40,13 @@ const MenuUsuario = ()=>{
                         padding: '10px',
                         border: '1px solid #4E342E',
                         borderRadius: '5px',
-                        backgroundColor: '#A3D9FF',
+                        backgroundColor: '#81c784',
                         cursor: 'pointer',
                         fontSize: '16px',
                         marginBottom: '20px',
                         fontFamily:'popins, sans-serif',
+                        color: '#ffff',
+                        textAlign:'center'
                         
                     }}
                 >
@@ -52,7 +54,6 @@ const MenuUsuario = ()=>{
                     <option value="entrada">Entrada</option>
                     <option value="postre">Postre</option>
                     <option value="bebida">Bebida</option>
-                    <option value="principal">Principal</option>
                 </select>
             </div>
 

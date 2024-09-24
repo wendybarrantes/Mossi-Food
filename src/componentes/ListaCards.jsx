@@ -22,7 +22,7 @@ const ListaCards = ({ platillos, mostrar, editarPlatillo,mostrarCarrito }) => {
                 return (
                     <CardPlatillo
                         key={platillo.id}
-                        img={platillo.imagen    }
+                        img={platillo.imagen}
                         nombre={platillo.nombre}
                         precio={platillo.precio}
                         descripcion={platillo.descripcion}

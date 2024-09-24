@@ -7,12 +7,8 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-container">
-                <div className="footer-section about">
-                    <h2>Sobre Nosotros</h2>
-                    <p>En Mossi Food Service, ofrecemos una experiencia culinaria única con platos elaborados con ingredientes frescos y de alta calidad. Ven y descubre tu nuevo lugar favorito.</p>
-                </div>
                 <div className="footer-section social">
-                    <h2>Síguenos</h2>
+                    <h3>Síguenos</h3>
                     <div className="social-icons">
                         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faInstagram} />
@@ -28,6 +24,7 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
+
                 <div className="footer-section newsletter">
                     <h2>Suscríbete a Nuestro Boletín</h2>
                     <p>Recibe las últimas noticias y ofertas especiales directamente en tu bandeja de entrada.</p>
@@ -39,7 +36,7 @@ const Footer = () => {
             </div>
             <div className="footer-bottom">
                 <p>© 2024 Mossi Food Service. Todos los derechos reservados. | <a href="#privacy">Política de Privacidad</a></p>
-                <p>Diseñado por Templatemonster</p>
+                <p>Diseñado por FWD</p>
             </div>
         </footer>
     );

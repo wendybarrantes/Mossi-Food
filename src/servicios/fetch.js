@@ -43,7 +43,7 @@ export {getData}
 */ 
 const getDestacadosData = async(endpoint)=>{
     try {
-        const peticion = await fetch(API_URL + endpoint+"?_page=1&_limit=5");
+        const peticion = await fetch(API_URL + endpoint+"?_page=1&_limit=3");
         const datos = await peticion.json();
         return datos;
     } catch (error) {
