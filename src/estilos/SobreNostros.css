@@ -1,7 +1,8 @@
 .titulo{
-    text-align: center;
+    margin-left: 120px;
     color:#4E342E;
-    font-family: "poppins,sans-serif";
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 80px;
 }
 .descripcion{
     max-width: 800px;
@@ -10,6 +11,24 @@
     line-height: 1.6;
     font-family: "poppins,sans-serif";
     margin-top: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
+.contenido-container {
+    display: flex; 
+    align-items: flex-start; 
+    margin: 20px 0; 
+}
+
+.img-sobreNosotros {
+    width: 500px; 
+    height: auto; 
+    margin-right: 5px; 
+    margin-bottom: 300px;
+    margin-left: 50px;
+}
+
+.descripcion {
+    max-width: 800px; 
+}
+
 
