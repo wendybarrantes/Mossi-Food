@@ -3,6 +3,7 @@ import '../estilos/FormularioInicio.css';
 import { getData, postData } from '../servicios/fetch';
 import { useNavigate } from 'react-router-dom';
 import '../estilos/Main.css'
+import Modal from './Modal';
 
 /*formulario de registro e inicio de sesion que toman los estados para validar inicio de sesion
 o para registrar un usuario nuevo
@@ -15,12 +16,13 @@ const FormularioInicio = ()=>{
     // Estos estados son para el inicio de sesión
     const [correoInicio,setCorreoInicio] = useState("");
     const [claveInicio,setClaveInicio] = useState("")
-
-
     // estados para el registro
     const [nombreRegistro,setNombreRegistro] = useState("");
     const [correoRegistro,setCorreoRegistro] = useState("");
     const [claveRegistro,setClaveRegistro] = useState("")
+    const [modalVisible,setmodalVisible]= useState(false)
+    const [mensaje,setmensaje]= useState('')
+
     //simular carga
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -42,20 +44,22 @@ const FormularioInicio = ()=>{
         if(credencialesUsuario.correo === "admin@gmail.com" && credencialesUsuario.clave === "admin"){
           navigate("/menu")
           sessionStorage.setItem("admin",true)
+          return
         }
 
         if(usuarioValido){
             navigate("/inicio")
         }
         else{
-            alert("Usuario inválido")
+            setmensaje("Usuario inválido")
+            setmodalVisible(true)
         }
-      }
+      };
     
-
      const crearUsuario = async()=>{
       if(nombreRegistro.trim() === '' || correoRegistro.trim() === '' || claveRegistro.trim() === ''){
-        alert('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
+        setmensaje('Todos los campos son obligatorios')
+        setmodalVisible(true) 
         return
     }else{
         const datosUsuario = {
@@ -65,7 +69,11 @@ const FormularioInicio = ()=>{
           }
           await postData(datosUsuario,"usuarios")
       }
-     } 
+     };
+     const cerrarModal=()=>{
+      setmodalVisible(false);
+     }
+
     return(
             <div className="container mt-5">
               <div className="row justify-content-center">
@@ -193,6 +201,11 @@ const FormularioInicio = ()=>{
                   </div>
                 </div>
               </div>
+                      <Modal visible={modalVisible} cerrarModal={cerrarModal}>
+                        <p>{mensaje}</p>
+
+                      </Modal>
+
             </div>
           );
 }

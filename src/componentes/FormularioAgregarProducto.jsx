@@ -19,7 +19,7 @@ const FormularioAgregarProducto = ()=>{
 
 const agregarPlatillo = async()=>{
 if(img.trim() === '' || nombrePlato.trim() === '' || precio.trim() === '' || descripcion.trim() === '' || categoria.trim() === ''){
-setmensaje('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
+setmensaje('Todos los campos son obligatorios') 
 setmodalVisible(true);
   return;
         }else{
