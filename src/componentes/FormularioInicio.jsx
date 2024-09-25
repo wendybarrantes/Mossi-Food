@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../estilos/FormularioInicio.css';
 import { getData, postData } from '../servicios/fetch';
 import { useNavigate } from 'react-router-dom';
+import '../estilos/Main.css'
 
 /*formulario de registro e inicio de sesion que toman los estados para validar inicio de sesion
 o para registrar un usuario nuevo
@@ -16,11 +17,11 @@ const FormularioInicio = ()=>{
     const [claveInicio,setClaveInicio] = useState("")
 
 
-    // Estos estados son para el registro
+    // estados para el registro
     const [nombreRegistro,setNombreRegistro] = useState("");
     const [correoRegistro,setCorreoRegistro] = useState("");
     const [claveRegistro,setClaveRegistro] = useState("")
-//simular carga
+    //simular carga
     const handleSubmit = (event) => {
         event.preventDefault();
         setIsLoading(true);
@@ -71,7 +72,7 @@ const FormularioInicio = ()=>{
                 <div className="col-md-6">
                   <div className="card">
                     <div className="card-body">
-                      <h2 className="card-title text-center mb-4">Foodie Auth</h2>
+                      <h2 className="card-title text-center mb-4">Mossi Food Service</h2>
                       <p className="text-center text-muted mb-4">Inicia sesión o regístrate para disfrutar de deliciosas comidas</p>
                       
                       <ul className="nav nav-tabs mb-4">
