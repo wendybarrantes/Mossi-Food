@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { postData } from '../servicios/fetch'
 import "../estilos/FormularioAgregarProductos.css"
+import {useNavigate  } from "react-router-dom";
 
 /*creo un estado que hace referencia a cada uno de los inputs y estos se actualizan con el evento de 
 los inputs.
@@ -28,6 +29,7 @@ alert('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
             }
           await postData(platillo,"productos")
         }
+        alert("se agrego")
     }
 
 // funcion para subir imagen en base64.
