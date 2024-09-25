@@ -54,17 +54,17 @@ const Menu = () => {
         <div>
 
             <Header/>
-            <h1>Menu</h1>
+
+            <button className="btn btn-primary" onClick={() => { navigate("/agregar") }}>
+                Agregar un nuevo producto
+            </button>
+
+
             <ListaCards 
                 platillos={platillos} 
                 mostrar={true} 
                 editarPlatillo={mostrarFomulario} 
             />
-
-
-            <button className="btn btn-primary" onClick={() => { navigate("/agregar") }}>
-                Agregar un nuevo producto
-            </button>
 
             {platilloEdit && (
                 <form onSubmit={subirCambio}>
