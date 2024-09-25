@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { postData } from '../servicios/fetch'
 import "../estilos/FormularioAgregarProductos.css"
-import {useNavigate  } from "react-router-dom";
+import Modal from './Modal'
 
 /*creo un estado que hace referencia a cada uno de los inputs y estos se actualizan con el evento de 
 los inputs.
@@ -13,12 +13,15 @@ const FormularioAgregarProducto = ()=>{
     const [precio,setPrecio]= useState('')
     const [descripcion,setDescripcion]=useState('')
     const [categoria,setCategoria] = useState('')
+    const [modalVisible,setmodalVisible]=useState(false);
+    const [mensaje,setmensaje]=useState('')
 
 
 const agregarPlatillo = async()=>{
 if(img.trim() === '' || nombrePlato.trim() === '' || precio.trim() === '' || descripcion.trim() === '' || categoria.trim() === ''){
-alert('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
-  return
+setmensaje('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
+setmodalVisible(true);
+  return;
         }else{
             const platillo = {
                 imagen: img,
@@ -27,10 +30,11 @@ alert('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
                 descripcion: descripcion,
                 categoria: categoria
             }
-          await postData(platillo,"productos")
+          await postData(platillo,"productos");
+          setmensaje("se agrego correctamente");
+          setmodalVisible(true);
         }
-        alert("se agrego")
-    }
+    };
 
 // funcion para subir imagen en base64.
   const subirImg = () => {
@@ -42,6 +46,9 @@ alert('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
         };
         reader.readAsDataURL(file);
     }
+};
+const cerrarModal = ()=>{
+  setmodalVisible(false);
 };
     return (
         <div className="form-container">
@@ -106,6 +113,10 @@ alert('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
             </div>
             <button type="button" onClick={agregarPlatillo}>Agregar Plato</button>
           </form>
+
+          <Modal visible={modalVisible} cerrarModal={cerrarModal}>
+            <p>{mensaje}</p>
+          </Modal>
         </div>
       )
     }
