@@ -20,7 +20,7 @@ const FormularioInicio = ()=>{
     const [nombreRegistro,setNombreRegistro] = useState("");
     const [correoRegistro,setCorreoRegistro] = useState("");
     const [claveRegistro,setClaveRegistro] = useState("")
-
+//simular carga
     const handleSubmit = (event) => {
         event.preventDefault();
         setIsLoading(true);
@@ -47,7 +47,7 @@ const FormularioInicio = ()=>{
             navigate("/inicio")
         }
         else{
-            console.log("Usuario inválido")
+            alert("Usuario inválido")
         }
       }
     

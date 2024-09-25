@@ -14,10 +14,10 @@ const FormularioAgregarProducto = ()=>{
     const [categoria,setCategoria] = useState('')
 
 
-    const agregarPlatillo = async()=>{
-        if(img.trim() === '' || nombrePlato.trim() === '' || precio.trim() === '' || descripcion.trim() === '' || categoria.trim() === ''){
-            alert('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
-            return
+const agregarPlatillo = async()=>{
+if(img.trim() === '' || nombrePlato.trim() === '' || precio.trim() === '' || descripcion.trim() === '' || categoria.trim() === ''){
+alert('Todos los campos son obligatorios') //HAY QUE CAMBIAR ESTO POR UN MODAL
+  return
         }else{
             const platillo = {
                 imagen: img,
@@ -26,7 +26,7 @@ const FormularioAgregarProducto = ()=>{
                 descripcion: descripcion,
                 categoria: categoria
             }
-            await postData(platillo,"productos")
+          await postData(platillo,"productos")
         }
     }
 

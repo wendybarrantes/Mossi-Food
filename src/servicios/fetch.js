@@ -14,9 +14,8 @@ const postData = async(obj,endpoint)=>{
             },
             body: JSON.stringify(obj)
         })
-        const respuesta = await peticion.json()
-        console.log(respuesta)
     } catch (error) {
+
         console.error(error)
     }
 }
@@ -32,7 +31,9 @@ const getData = async(endpoint)=>{
       const datos = await peticion.json();
       return datos;
   } catch (error) {
+
     console.error(error);
+    
   }
 }
 export {getData}
@@ -74,8 +75,8 @@ const getCartData = async(endpoint,id)=>{
     } catch (error) {
       console.error(error);
     }
-  }
-  export {getCartData}
+    }
+     export {getCartData}
 
 /* creacion de la funcion para eliminar los datos, le doy un id para que solamente se elimine el dato 
 seleccionado*/ 

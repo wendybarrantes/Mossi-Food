@@ -29,7 +29,6 @@ const Inicio = ()=>{
         
       
             <ListaCards platillos={platillosDestacados} mostrarCarrito={true}/> 
-            {/* Se muestran en la página todos los datos que venían del estado */}
 
            <Footer/>
         </>

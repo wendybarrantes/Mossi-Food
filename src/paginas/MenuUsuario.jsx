@@ -59,12 +59,7 @@ const MenuUsuario = ()=>{
 
        
 
-        <div style={{ textAlign: 'center', margin: '100px 0' }}>
-        <h2 style={{ fontSize: '40px', color: '#4E342E', position: 'relative',  fontFamily:'popins,sans-serif'}}>
-        <span style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>Destacados</span>
-        <div style={{ width: '50%', height: '4px', backgroundColor: '#4E342E', margin: '10px auto' }}></div>
-        </h2>
-        </div>
+       
 
 
         {categoria == "" ? <ListaCards platillos={platillos}/> : <ListaCards platillos={platillosFiltrados}/>}
