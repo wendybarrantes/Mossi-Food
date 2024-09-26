@@ -15,7 +15,7 @@ const FormularioInicio = ()=>{
     const [activeTab, setActiveTab] = useState("login");
     const [isLoading, setIsLoading] = useState(false);
 
-    // Estos estados son para el inicio de sesión
+    // estados para el inicio de sesión
     const [correoInicio,setCorreoInicio] = useState("");
     const [claveInicio,setClaveInicio] = useState("")
     // estados para el registro
@@ -25,7 +25,6 @@ const FormularioInicio = ()=>{
     const [modalVisible,setmodalVisible]= useState(false)
     const [mensaje,setmensaje]= useState('')
 
-    //simular carga
     const handleSubmit = (event) => {
         event.preventDefault();
         setIsLoading(true);
@@ -48,12 +47,11 @@ const FormularioInicio = ()=>{
           sessionStorage.setItem("admin",true)
           return
         }
-
         if(usuarioValido){
             navigate("/inicio")
         }
         else{
-            setmensaje("Usuario inválido")
+            setmensaje("usuario invalido")
             setmodalVisible(true)
         }
       };
@@ -70,8 +68,10 @@ const FormularioInicio = ()=>{
               clave:claveRegistro
           }
           await postData(datosUsuario,"usuarios")
+          setmensaje("usuario registrado")
+          setmodalVisible(true)
       }
-     };
+     }
      const cerrarModal=()=>{
       setmodalVisible(false);
      }

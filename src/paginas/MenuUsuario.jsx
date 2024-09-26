@@ -54,7 +54,7 @@ const MenuUsuario = ()=>{
                     <option value="entrada">Entrada</option>
                     <option value="postre">Postre</option>
                     <option value="bebida">Bebida</option>
-                    <option value="plato principal">Plato principal</option>
+                    <option value="plato_principal">Plato principal</option>
                 </select>
             </div>
 

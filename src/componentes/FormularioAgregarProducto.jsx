@@ -36,7 +36,6 @@ setmodalVisible(true);
         }
     };
 
-// funcion para subir imagen en base64.
   const subirImg = () => {
     const file = document.getElementById("upload-file").files[0];
     const reader = new FileReader();
