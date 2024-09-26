@@ -1,0 +1,45 @@
+:root {
+  --hover-color: #6fa3d5; 
+  --cart-color: #6fa3d5; 
+  font-family: 'Courier New', Courier, monospace; 
+
+}
+
+.nav-links .nav-item {
+  color: #5D4037 ;
+  font-weight: 500;
+  font-size: 18px;
+  transition: color 0.3s; 
+  border-bottom: #5D4037 5px solid;
+
+  
+}
+
+.nav-links .nav-item:hover {
+  color: var(--hover-color); 
+
+}
+
+.carrito {
+  text-decoration: none;
+  color: var(--cart-color); 
+  position: relative; 
+}
+
+.carrito:hover {
+  color: darkgreen;
+}
+
+.badge {
+  font-size: 12px; 
+  padding: 0.25em 0.5em;
+
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: center; /* Centra los enlaces */
+  }
+}
