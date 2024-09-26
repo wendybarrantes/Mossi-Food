@@ -4,6 +4,8 @@ import { getData, postData } from '../servicios/fetch';
 import { useNavigate } from 'react-router-dom';
 import '../estilos/Main.css'
 import Modal from './Modal';
+import "./Footer"
+
 
 /*formulario de registro e inicio de sesion que toman los estados para validar inicio de sesion
 o para registrar un usuario nuevo
@@ -75,6 +77,7 @@ const FormularioInicio = ()=>{
      }
 
     return(
+      
             <div className="container mt-5">
               <div className="row justify-content-center">
                 <div className="col-md-6">
@@ -197,14 +200,14 @@ const FormularioInicio = ()=>{
                         <a href="/terms" className="text-decoration-none">Términos de servicio</a> y{" "}
                         <a href="/privacy" className="text-decoration-none">Política de privacidad</a>.
                       </p>
+                      <Modal visible={modalVisible} cerrarModal={cerrarModal}>
+                        <p>{mensaje}</p>
+                      </Modal>
                     </div>
                   </div>
                 </div>
               </div>
-                      <Modal visible={modalVisible} cerrarModal={cerrarModal}>
-                        <p>{mensaje}</p>
-
-                      </Modal>
+                      
 
             </div>
           );

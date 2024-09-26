@@ -10,16 +10,16 @@ const Footer = () => {
                 <div className="footer-section social">
                     <h3>Síguenos</h3>
                     <div className="social-icons">
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <FontAwesomeIcon icon={faInstagram} />
                         </a>
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <FontAwesomeIcon icon={faFacebook} />
                         </a>
-                        <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                             <FontAwesomeIcon icon={faWhatsapp} />
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                             <FontAwesomeIcon icon={faTwitter} />
                         </a>
                     </div>
