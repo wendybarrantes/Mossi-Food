@@ -54,6 +54,7 @@ const MenuUsuario = ()=>{
                     <option value="entrada">Entrada</option>
                     <option value="postre">Postre</option>
                     <option value="bebida">Bebida</option>
+                    <option value="plato principal">Plato principal</option>
                 </select>
             </div>
 
@@ -62,7 +63,7 @@ const MenuUsuario = ()=>{
        
 
 
-        {categoria == "" ? <ListaCards platillos={platillos}/> : <ListaCards platillos={platillosFiltrados}/>}
+        {categoria == "" ? <ListaCards platillos={platillos}/> : <ListaCards platillos={platillosFiltrados} mostrarCarrito={true}/>}
 
         <Footer/>
         </>
